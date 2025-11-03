@@ -6,8 +6,7 @@
       href="#"
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
     >
-      <img src="https://fastbootstrap.com/images/bootstrap-logo.svg" width="36" />
-      <span class="fs-4 ms-2">Brand</span>
+      <img src="https://mck.agency/images/logo-mck.png" width="160" />
     </a>
 
     <hr class="text-secondary" />
@@ -52,13 +51,8 @@
 
     <hr class="text-secondary" />
 
-    <!-- Search -->
-    <form class="d-flex mb-3">
-      <input type="text" class="form-control form-control-sm" placeholder="Search" />
-    </form>
-
     <!-- Signup -->
-    <button class="btn btn-gradient w-100">Sign up</button>
+    <button class="btn btn-gradient w-100 text-white">Sign up</button>
   </aside>
 </template>
 
@@ -85,7 +79,7 @@ export default {
 .sidebar {
   width: 250px;
   min-height: 100vh;
-  background: linear-gradient(180deg, #343a40, #212529);
+  background: linear-gradient(180deg, #040823, #040823);
 }
 
 /* Nav link hover */
@@ -104,7 +98,7 @@ export default {
 
 /* Botón gradient */
 .btn-gradient {
-  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  background: linear-gradient(135deg, #a31ad1, #a31ad1);
   border: none;
 }
 .btn-gradient:hover {

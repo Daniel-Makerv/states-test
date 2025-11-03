@@ -3,17 +3,32 @@
 namespace App\Http\Controllers\State;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\State\StateService;
+use Exception;
 use Illuminate\Http\Request;
 
 class StateController extends Controller
 {
+    private $stateService;
+
+    // Inyectamos el servicio en el constructor
+    public function __construct(StateService $stateService)
+    {
+        $this->stateService = $stateService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return inertia('StateIndex');
+        try {
+            $states = $this->stateService->getStates();
+        } catch (\Exception $err) {
+            throw new Exception('Error Processing Request: '.$err->getMessage(), 500);
+        }
 
+        return inertia('StateIndex', ['states' => $states]);
     }
 
     /**
