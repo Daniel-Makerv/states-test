@@ -30,8 +30,6 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
 # Generar la key de Laravel
-RUN php artisan key:generate
-
 # Dar permisos al almacenamiento
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
