@@ -11,6 +11,9 @@ class InegiService
 
     protected $baseUri;
 
+    /**
+     * __construct
+     */
     public function __construct()
     {
 

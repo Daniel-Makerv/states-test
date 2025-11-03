@@ -16,13 +16,13 @@
       <li class="nav-item">
         <a href="/" class="nav-link text-white d-flex align-items-center">
           <i class="bi bi-house-door me-2"></i>
-          Home
+          {{ $t("init") }}
         </a>
       </li>
       <li>
         <a href="/" class="nav-link text-white d-flex align-items-center">
           <i class="bi bi-people me-2"></i>
-          States
+          {{ $t("states") }}
         </a>
       </li>
       <li>
@@ -31,7 +31,7 @@
           class="nav-link text-white d-flex align-items-center justify-content-between"
           style="cursor: pointer"
         >
-          <span><i class="bi bi-folder me-2"></i>Projects</span>
+          <span><i class="bi bi-folder me-2"></i> {{ $t("state_details") }}</span>
           <i :class="openMenus.projects ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
         </a>
         <ul v-show="openMenus.projects" class="nav flex-column ms-3 collapse-menu">
@@ -52,7 +52,9 @@
     <hr class="text-secondary" />
 
     <!-- Signup -->
-    <button class="btn btn-gradient w-100 text-white">Sign up</button>
+    <button @click="changeLanguage('en')">English</button>
+    <button @click="changeLanguage('es')" class="mt-2">Español</button>
+    <button class="btn btn-gradient w-100 text-white mt-2">Sign up</button>
   </aside>
 </template>
 
@@ -69,6 +71,9 @@ export default {
   methods: {
     toggleMenu(menu) {
       this.openMenus[menu] = !this.openMenus[menu];
+    },
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
     },
   },
 };
